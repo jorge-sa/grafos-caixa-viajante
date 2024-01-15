@@ -1,4 +1,5 @@
 import sys
+import readfile
 
 class City:
     def __init__(self):
@@ -18,8 +19,14 @@ def vizinho_nao_visitado_distancia(x:tuple):
 def distancia_retorno_inicio(x:City, inicio:City):
     return [y[1] for y in x.vizinhos if y[0]==inicio]
 
-#tabela de distancia entre vertices
-#-------definir matriz de distancia
+#build cities distance matrix
+file = readfile.open_file_selection()
+
+matrix_dist = list()
+for item in file:
+    matrix_dist.append([float(x) for x in item.split()])
+else:
+    matrix_dist.pop()
 
 lista_city = []
 for x in range(len(matrix_dist)):
@@ -38,6 +45,5 @@ while not all([x.visitado for x in lista_city]):
     cur = tar[0]
     cur.visitado = True
     print(cur)
-
 
 print(dist + sum(distancia_retorno_inicio(cur,inicio)))
