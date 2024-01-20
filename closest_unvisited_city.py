@@ -1,5 +1,5 @@
 import sys
-import readfile
+import matrix_builder
 
 class City:
     def __init__(self):
@@ -20,14 +20,9 @@ def distancia_retorno_inicio(x:City, inicio:City):
     return [y[1] for y in x.vizinhos if y[0]==inicio]
 
 #build cities distance matrix
-file = readfile.open_file_selection()
+matrix_dist = matrix_builder.build_graph_matrix()
 
-matrix_dist = list()
-for item in file:
-    matrix_dist.append([float(x) for x in item.split()])
-else:
-    matrix_dist.pop()
-
+#algorithm start
 lista_city = []
 for x in range(len(matrix_dist)):
     lista_city.append(City())
