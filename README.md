@@ -9,8 +9,10 @@
 
 <h1>Como usar</h1>
 <h3>
-- clone o repositório usado a url: https://github.com/jorge-sa/grafos-caixeiro-viajante.git
+  
+- Clone o repositório usado a url: https://github.com/jorge-sa/grafos-caixeiro-viajante.git
 - Executado closest_unvisited_city.py: Esse algoritmo consiste em escolher o caminho mais no curto no momento.
+  
 </h3>
 
 <h1>Linceça</h1>
@@ -24,17 +26,21 @@
 <h1>Hardware sugerido</h1>
 <h2>Esse sistema foi usado para rodar todos os algoritmos, então estamos o usando como base.</h2>
 <h3>
+  
 - Processador	Intel(R) Core(TM) i5-3570 CPU @ 3.40GHz   3.40 GHz
 - 8GB RAM DDR3
 - HD de 500GB
 - SSD de 256GB
 - Sistema operacional de 64 bits, processador baseado em x64
+  
 </h3>
 
 <h1>Software necessário</h1>
 <h3>
+  
 - Windows 11
 - Python 3.10
+  
 </h3>
 
 <h1>Agradecimentos</h1>
