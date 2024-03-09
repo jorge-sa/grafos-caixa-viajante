@@ -11,6 +11,7 @@ def build_graph_matrix():
     for item in file:
         dist_matrix.append([float(x) for x in item.split()])
     else:
-        dist_matrix.pop()
+        if dist_matrix[-1] == []:
+            dist_matrix.pop()
 
     return dist_matrix
