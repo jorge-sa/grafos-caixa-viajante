@@ -48,7 +48,7 @@ def isCycleUtil(graph, vertx, parent, visited):
     else:
         return False
 
-def isCycle(v:list, graph:list):
+def isCycle(v:list, graph:list, se:edge):
     adj = {}
 
     for ve in v:
@@ -57,7 +57,7 @@ def isCycle(v:list, graph:list):
             if ve in e.vtx:
                 adj[ve].append(e.vtx[0] if e.vtx[0] != ve else e.vtx[1])
 
-    start = list(adj.keys())[0]
+    start = se.vtx[0]
     visited = set()
     if isCycleUtil(adj, start, -1, visited):
         print("Found cycle")
@@ -80,7 +80,7 @@ while len(arestas) < len(mtx)-1:
         v.append(e.vtx[1])
     else:
         print("pontos já encontrados")
-        if not isCycle(v, arestas+[e]):
+        if not isCycle(v, arestas+[e], e):
             print("a added")
             arestas.append(e)
 
