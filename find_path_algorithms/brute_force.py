@@ -2,13 +2,20 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import matrix_builder
 import itertools
+import math
 
 def traveling_salesman(matrix):
     n = len(matrix)
     min_distance = sys.maxsize
+    total_of_permutations = math.factorial(n)
+    total_of_permutations_perfomed = 0
     best_route = None
+    print("total of permutations: ",total_of_permutations)
     for route in itertools.permutations(range(n)):
         total_distance = 0
+        total_of_permutations_perfomed += 1
+        print("total of permutations performed: ", total_of_permutations_perfomed)
+        print("percentage: ", round((total_of_permutations_perfomed*100/total_of_permutations), 2))
         for i in range(n - 1):
             origin = route[i]
             destination = route[i + 1]
