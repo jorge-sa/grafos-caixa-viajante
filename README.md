@@ -15,7 +15,7 @@
   
 </h3>
 
-<h1>Linceça</h1>
+<h1>Licença</h1>
 
 <h1>Contato do desenvolvedor</h1>
 <h3>
