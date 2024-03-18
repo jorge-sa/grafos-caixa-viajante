@@ -5,7 +5,7 @@ from tkinter import filedialog as fd
 def open_file_selection():
     return fd.askopenfile()
 
-# Build cities distance matrix
+# Construir matriz de distâncias entre cidades
 def build_graph_matrix():
     file = open_file_selection()
 
@@ -17,11 +17,11 @@ def build_graph_matrix():
 
     return dist_matrix
 
-# Function to find the minimum spanning tree using Prim's algorithm
+# Função para encontrar a árvore de abrangência mínima usando o algoritmo de Prim
 def minimum_spanning_tree(graph):
     return nx.minimum_spanning_tree(graph)
 
-# Function to find the vertices with odd degree
+# Função para encontrar os vértices com grau ímpar
 def find_odd_vertices(graph):
     odd_vertices = []
     for node in graph.nodes():
@@ -29,54 +29,54 @@ def find_odd_vertices(graph):
             odd_vertices.append(node)
     return odd_vertices
 
-# Function to find the minimum weight perfect matching of odd vertices using greedy algorithm
+# Função para encontrar o casamento perfeito de peso mínimo dos vértices ímpares usando algoritmo guloso
 def minimum_weight_matching(graph, odd_vertices):
     min_weight_matching = nx.algorithms.matching.max_weight_matching(graph, maxcardinality=False)
     min_weight_matching_edges = [(u, v) for u, v in min_weight_matching]
     return min_weight_matching_edges
 
-# Function to construct a multigraph from the minimum spanning tree and minimum weight matching
+# Função para construir um multigrafo a partir da árvore de abrangência mínima e do casamento de peso mínimo
 def construct_multigraph(graph, mst, matching_edges):
     multigraph = nx.MultiGraph(graph)
     multigraph.add_edges_from(matching_edges)
     return multigraph
 
-# Function to find an Eulerian circuit in the multigraph
+# Função para encontrar um circuito euleriano no multigrafo
 def eulerian_circuit(multigraph):
     return list(nx.eulerian_circuit(multigraph))
 
-# Function to find a Hamiltonian circuit from the Eulerian circuit
+# Função para encontrar um circuito hamiltoniano a partir do circuito euleriano
 def christofides_algorithm(graph):
-    # Step 1: Compute minimum spanning tree
+    # Passo 1: Calcular a árvore de abrangência mínima
     mst = minimum_spanning_tree(graph)
 
-    # Step 2: Find vertices with odd degree
+    # Passo 2: Encontrar vértices com grau ímpar
     odd_vertices = find_odd_vertices(mst)
 
-    # Step 3: Find minimum weight perfect matching of odd vertices
+    # Passo 3: Encontrar casamento perfeito de peso mínimo dos vértices ímpares
     min_weight_matching_edges = minimum_weight_matching(graph, odd_vertices)
 
-    # Step 4: Construct a multigraph
+    # Passo 4: Construir um multigrafo
     multigraph = construct_multigraph(graph, mst, min_weight_matching_edges)
 
-    # Step 5: Find Eulerian circuit in multigraph
+    # Passo 5: Encontrar um circuito euleriano no multigrafo
     eulerian_path = eulerian_circuit(multigraph)
 
-    # Step 6: Remove duplicates from Eulerian path to get Hamiltonian path
+    # Passo 6: Remover duplicatas do caminho euleriano para obter um caminho hamiltoniano
     hamiltonian_path = list(dict.fromkeys([node for node, _ in eulerian_path]))
 
-    # Step 7: Return the Hamiltonian circuit
+    # Passo 7: Retornar o circuito hamiltoniano
     return hamiltonian_path
 
-# Example usage:
+# Exemplo de uso:
 if __name__ == "__main__":
-    # Build graph matrix
+    # Construir matriz de grafo
     graph_matrix = build_graph_matrix()
 
-    # Convert matrix to graph
+    # Converter matriz em grafo
     graph = nx.from_numpy_array(np.array(graph_matrix))
 
-    # Run Christofides algorithm
+    # Executar algoritmo de Christofides
     hamiltonian_path = christofides_algorithm(graph)
 
-    print("Approximate solution (Hamiltonian circuit):", hamiltonian_path)
+    print("Solução aproximada (circuito hamiltoniano):", hamiltonian_path)
