@@ -20,6 +20,8 @@
 <h1>Contato do desenvolvedor</h1>
 <h3>
   Nome: Jorge Lucas Firmino Silva de Sá
+</h3>
+<h3>
   Email: jorge.sa@arapiraca.ufal.br
 </h3>
 
