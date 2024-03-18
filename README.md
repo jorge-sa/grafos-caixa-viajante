@@ -17,7 +17,7 @@
 
 <h1>Licença</h1>
 
-<h1>Contatos do desenvolvedores</h1>
+<h1>Contato dos desenvolvedores</h1>
 <h3>
   Nome: Jorge Lucas Firmino Silva de Sá, Leandro Alencar Lira
 </h3>
