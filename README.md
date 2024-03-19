@@ -24,6 +24,10 @@
 <h3>
   Email: jorge.sa@arapiraca.ufal.br, leandro.lira@arapiraca.ufal.br
 </h3>
+<h3>
+  Nome: Samuel Jonas Cavalcante Lima
+  email: samuel.lima@arapiraca.ufal.br
+</h3>
 
 <h1>Hardware sugerido</h1>
 <h2>Esse sistema foi usado para rodar todos os algoritmos, então estamos o usando como base.</h2>
