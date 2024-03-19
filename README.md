@@ -19,14 +19,10 @@
 
 <h1>Contato dos desenvolvedores</h1>
 <h3>
-  Nome: Jorge Lucas Firmino Silva de Sá, Leandro Alencar Lira
+  Nome: Jorge Lucas Firmino Silva de Sá, Leandro Alencar Lira, Samuel Jonas Cavalcante Lima, Saul Contêlo Batista
 </h3>
 <h3>
-  Email: jorge.sa@arapiraca.ufal.br, leandro.lira@arapiraca.ufal.br
-</h3>
-<h3>
-  Nome: Samuel Jonas Cavalcante Lima
-  email: samuel.lima@arapiraca.ufal.br
+  Email: jorge.sa@arapiraca.ufal.br, leandro.lira@arapiraca.ufal.br, samuel.lima@arapiraca.ufal.br, saul.batista@arapiraca.ufal.br
 </h3>
 
 <h1>Hardware sugerido</h1>
